@@ -22,7 +22,7 @@ function varargout = motor_GUI(varargin)
 
 % Edit the above text to modify the response to help motor_GUI
 
-% Last Modified by GUIDE v2.5 02-May-2019 14:42:46
+% Last Modified by GUIDE v2.5 07-May-2019 09:32:50
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -129,12 +129,13 @@ function CW_oneStep_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 global a,
+global step_size;
 writeDigitalPin(a,'D2',1),
 writeDigitalPin(a,'D3',1),
 pause(0.001),
 writeDigitalPin(a,'D3',0),
 global angle;
-angle=angle-1.8;
+angle=angle-step_size;
 compass(handles.axes2,cos(pi/180*angle),sin(pi/180*angle));
 
 % --- Executes on button press in ACW_one_step.
@@ -148,7 +149,7 @@ writeDigitalPin(a,'D3',1),
 pause(0.001),
 writeDigitalPin(a,'D3',0),
 global angle;
-angle=angle+1.8;
+angle=angle+step_size;
 compass(handles.axes2,cos(pi/180*angle),sin(pi/180*angle));
 
 
@@ -194,7 +195,7 @@ for i=1:x
     writeDigitalPin(a,'D3',0);
     %pause(0.001);
     %4.56s per 360 degrees
-    angle=angle+1.8;
+    angle=angle+step_size;
 end
 compass(handles.axes2,cos(pi/180*angle),sin(pi/180*angle));
 
@@ -242,7 +243,7 @@ for i=1:x
     pause(0.001);
     writeDigitalPin(a,'D3',0);
     %pause(0.001);
-    angle=angle-1.8;
+    angle=angle-step_size;
     
 end
 compass(handles.axes2,cos(pi/180*angle),sin(pi/180*angle));
@@ -343,7 +344,7 @@ if angle<0
     writeDigitalPin(a,'D3',0);
     %pause(0.001);
     %4.56s per 360 degrees
-    angle=angle+1.8;
+    angle=angle+step_size;
     end
 elseif angle>0
     writeDigitalPin(a,'D2',1);
@@ -353,7 +354,15 @@ elseif angle>0
     writeDigitalPin(a,'D3',0);
     %pause(0.001);
     %4.56s per 360 degrees
-    angle=angle-1.8;
+    angle=angle-step_size;
     end
 end
 compass(handles.axes2,cos(angle/180*pi),sin(angle/180*pi));
+
+
+% --- Executes on button press in Exit.
+function Exit_Callback(hObject, eventdata, handles)
+% hObject    handle to Exit (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+clear all;
