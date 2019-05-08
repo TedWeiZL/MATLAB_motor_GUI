@@ -11,7 +11,7 @@
   * Arduino UNO prototyping board (optional)
   * Logitech C170 Webcam
   * 16-24V DC power supply
-  * Abundant amount of wires
+  * Abundant amount of wires for connecting hardware
   
 ### To use GUI
   1. Make sure both ***Arduino UNO board*** and the ***webcam*** are ***plugged in***, otherwise MATLAB will not be able to launch the GUI.
