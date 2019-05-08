@@ -301,6 +301,7 @@ elseif step_size==0.1125
     writeDigitalPin(a,'D7',1);
     writeDigitalPin(a,'D8',1);
 end
+set(handles.step_size_dis,'String',num2str(step_size));
 
 
 % --- Executes on button press in take_photo.
@@ -365,4 +366,5 @@ function Exit_Callback(hObject, eventdata, handles)
 % hObject    handle to Exit (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+close all;
 clear all;
