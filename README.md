@@ -10,7 +10,7 @@
   * Arduino UNO board
   * Arduino UNO prototyping board (optional)
   * Logitech C170 Webcam
-  *16-24V DC power supply
+  * 16-24V DC power supply
   * Abundant amount of wires
   
 ### To use GUI
@@ -18,3 +18,5 @@
   2. The Arduino board can exist as *USB serial Ports(COM3)* or *USB serial Ports(COM4)* depending on the pc. This GUI is designed assuming
      the Arduino board is detected as *USB serial Ports(COM3)*.
      The port name can be found in *Device Manager* in window system.
+     If the port name is other than 'COM3', change .m file accordingly: 
+                        at line
