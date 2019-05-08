@@ -14,9 +14,9 @@
   * Abundant amount of wires
   
 ### To use GUI
-  1. Make sure both Arduino UNO board and the webcam are plugged in, otherwise MATLAB will not be able to launch the GUI.
-  2. The Arduino board can exist as *USB serial Ports(COM3)* or *USB serial Ports(COM4)* depending on the pc. This GUI is designed assuming
-     the Arduino board is detected as *USB serial Ports(COM3)*.
+  1. Make sure both ***Arduino UNO board*** and the ***webcam*** are ***plugged in***, otherwise MATLAB will not be able to launch the GUI.
+  
+  2. The Arduino board can exist as *USB serial Ports(COM3)* or *USB serial Ports(COM4)* depending on the pc. This GUI is designed assuming the Arduino board is detected as *USB serial Ports(COM3)*.
      The port name can be found in *Device Manager* in window system.
-     If the port name is other than 'COM3', change .m file accordingly: 
-                        at line
+     If the port name is other than 'com3', change .m file accordingly: 
+                        at line 66 : a=arduino('com3','uno');
